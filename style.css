@@ -1,0 +1,732 @@
+/* =========================
+   ОСНОВА
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            #172038 0%,
+            #090c13 42%,
+            #05070b 100%
+        );
+
+    color: #f4f6fa;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Inter",
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   ФОН
+========================= */
+
+.background-blur {
+    position: fixed;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    filter: blur(160px);
+
+    opacity: 0.14;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.blur-one {
+    background: #4d78ff;
+
+    top: -250px;
+    right: -160px;
+}
+
+.blur-two {
+    background: #6848ff;
+
+    bottom: -320px;
+    left: -220px;
+}
+
+
+/* =========================
+   ВЕРХНЕЕ МЕНЮ
+========================= */
+
+.navbar {
+    width: min(1180px, 92%);
+
+    height: 88px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.logo-icon {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.065);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+
+.nav-status {
+    font-size: 13px;
+
+    color: #7e8797;
+}
+
+
+/* =========================
+   КОНТЕНТ
+========================= */
+
+main {
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   ПЕРВЫЙ ЭКРАН
+========================= */
+
+.hero {
+    max-width: 1000px;
+
+    padding:
+        115px
+        0
+        125px;
+}
+
+
+.badge {
+    display: inline-flex;
+
+    padding:
+        8px
+        14px;
+
+    margin-bottom: 29px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    color: #8493b1;
+
+    font-size: 11px;
+
+    letter-spacing: 0.19em;
+
+    font-weight: 700;
+}
+
+
+.hero h1 {
+    max-width: 1000px;
+
+    font-size:
+        clamp(54px, 7vw, 96px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.058em;
+
+    font-weight: 650;
+}
+
+
+.hero h1 span {
+    color: #78808e;
+}
+
+
+.hero-description {
+    max-width: 590px;
+
+    margin-top: 35px;
+
+    color: #9199a7;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================
+   СТАТИСТИКА
+========================= */
+
+.stats {
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+
+    margin-top: 55px;
+}
+
+
+.stat {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.stat strong {
+    color: #f3f5f8;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+
+.stat span {
+    color: #6f7887;
+
+    font-size: 12px;
+}
+
+
+.stat-divider {
+    width: 1px;
+
+    height: 36px;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+}
+
+
+/* =========================
+   РАЗДЕЛ МАТЕРИАЛОВ
+========================= */
+
+.materials {
+    padding-bottom: 110px;
+}
+
+
+.section-header {
+    margin-bottom: 36px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+
+.section-label {
+    margin-bottom: 11px;
+
+    color: #7386ae;
+
+    font-size: 11px;
+
+    letter-spacing: 0.19em;
+
+    font-weight: 700;
+}
+
+
+.section-header h2 {
+    font-size: 36px;
+
+    font-weight: 550;
+
+    letter-spacing: -0.04em;
+}
+
+
+.section-description {
+    color: #727b8a;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   СЕТКА
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================
+   КАРТОЧКИ
+========================= */
+
+.card {
+    position: relative;
+
+    min-height: 315px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-radius: 23px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.075);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -110px;
+    top: -110px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(78, 111, 255, 0.13);
+
+    filter: blur(75px);
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-7px);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border-color:
+        rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22);
+}
+
+
+.card:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================
+   ВЕРХ КАРТОЧКИ
+========================= */
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+
+.icon {
+    width: 49px;
+    height: 49px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.065);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.085);
+
+    font-size: 21px;
+}
+
+
+.number {
+    color: #505969;
+
+    font-size: 12px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================
+   ТЕКСТ КАРТОЧКИ
+========================= */
+
+.card-content h3 {
+    margin-bottom: 12px;
+
+    font-size: 27px;
+
+    font-weight: 550;
+
+    letter-spacing: -0.035em;
+}
+
+
+.card-content p {
+    max-width: 340px;
+
+    color: #818a99;
+
+    font-size: 14px;
+
+    line-height: 1.62;
+}
+
+
+/* =========================
+   КНОПКА ОТКРЫТИЯ
+========================= */
+
+.open {
+    margin-top: 34px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #a6aebb;
+
+    font-size: 13px;
+
+    transition: color 0.3s ease;
+}
+
+
+.open span {
+    font-size: 19px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.card:hover .open {
+    color: white;
+}
+
+
+.card:hover .open span {
+    transform:
+        translate(4px, -4px);
+}
+
+
+/* =========================
+   ВОПРОСЫ К ЗАЧЁТУ
+========================= */
+
+.questions-card {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding:
+        35px
+        36px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 23px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.085);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(73, 100, 174, 0.17),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.questions-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(255, 255, 255, 0.19);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(73, 100, 174, 0.23),
+            rgba(255, 255, 255, 0.045)
+        );
+}
+
+
+.questions-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 26px;
+
+    font-weight: 550;
+
+    letter-spacing: -0.03em;
+}
+
+
+.questions-card p {
+    color: #818a98;
+
+    font-size: 14px;
+}
+
+
+.questions-arrow {
+    width: 57px;
+    height: 57px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    font-size: 24px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.questions-card:hover .questions-arrow {
+    transform: translateX(5px);
+
+    background:
+        rgba(255, 255, 255, 0.11);
+}
+
+
+/* =========================
+   НИЗ
+========================= */
+
+footer {
+    width:
+        min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding:
+        31px 0 46px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555e6d;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media (max-width: 760px) {
+
+    .navbar {
+        height: 74px;
+    }
+
+    .nav-status {
+        display: none;
+    }
+
+    .hero {
+        padding:
+            80px
+            0
+            85px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+
+        line-height: 1.02;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .stats {
+        gap: 17px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .section-description {
+        display: none;
+    }
+
+    .card {
+        min-height: 285px;
+    }
+
+    .questions-card {
+        padding:
+            28px
+            25px;
+    }
+
+    .questions-card h3 {
+        font-size: 22px;
+    }
+
+    .questions-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
